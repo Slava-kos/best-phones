@@ -15,8 +15,10 @@ define ('PathPrefix', '../controllers/');
 define ('PathPostfix', 'Controller.php');
 
 function loadPage ($controllerName, $actionName = 'index') {
-    include_once PathPrefix . $controllerName . PathPrefix;
+    include_once PathPrefix . $controllerName . PathPostfix;
     
     $function = $actionName . 'Action'; 
     $function();
 }
+
+loadPage($controllerName, $actionName);
