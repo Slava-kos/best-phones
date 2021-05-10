@@ -1,7 +1,7 @@
 <?php
 
-include_once '../config/config.php';   //Инициализация настроек
-include_once '../library/mainFunctions.php'; //Основный функции
+include_once '../config/config.php';            //Инициализация настроек
+include_once '../library/mainFunctions.php';    //Основный функции
 //определяется с каким контроллером будет проводиться работа
 $controllerName = isset($_GET['controller']) ? ucfirst($_GET['controller']) : 'Index';
 
