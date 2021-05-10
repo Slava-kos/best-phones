@@ -9,3 +9,14 @@ echo 'Подключаемый php файл (Контроллер) = ' . $contro
 $actionName = isset ($_GET['action']) ? $_GET['action'] : 'index';
 
 echo 'функция формирующая страницу (Экшн) = ' . $actionName . '<br />';
+
+//оптимизация, констатанты для обращения к контроллерам
+define ('PathPrefix', '../controllers/');
+define ('PathPostfix', 'Controller.php');
+
+function loadPage ($controllerName, $actionName = 'index') {
+    include_once PathPrefix . $controllerName . PathPrefix;
+    
+    $function = $actionName . 'Action'; 
+    $function();
+}
