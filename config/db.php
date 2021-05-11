@@ -6,7 +6,7 @@
  * 
  */
 
-$dblocation = "localhost";
+$dblocation = "127.0.0.1";
 $dbname = "best-phones";
 $dbuser = "root";
 $dbpasswd = "";
