@@ -26,6 +26,22 @@ function loadPage ($smarty, $controllerName, $actionName = 'index') {
  * @param string $templateName название шаблона файла
  */
 function loadTemplate($smarty, $templateName)
-{
+{   
     $smarty->display($templateName . TemplatePostfix);
+}
+
+
+/**
+ * Функция отладки, выводит значение переменной value
+ * @param type $value переменная для выводы ее на страницц
+ * 
+ * 
+ */
+function d($value = null, $die = 1)
+{
+    echo 'Debug: <br /><pre>';
+    print_r($value);
+    echo '</pre>';
+    
+    if($die) die;
 }
