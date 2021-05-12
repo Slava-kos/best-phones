@@ -11,11 +11,6 @@
  * @param type $limit лимит товаров
  * @return type массив товаров
  */
-
-
-
-
-
 function getLastProducts($limit = null)
 {   global $db;
     $sql = "SELECT *
@@ -28,4 +23,22 @@ function getLastProducts($limit = null)
     $rs = mysqli_query($db,$sql);
     
     return createSmartyRsArray($rs);
+}
+
+/**
+ * Получить продукты для категории $itemId
+ * 
+ * @param integer $itemId ID категории
+ * @return array массив продуктов 
+ */
+function getProductsByCat($itemId)
+{   global $db;
+   $itemId = intval($itemId);
+   $sql = "SELECT * 
+            FROM products
+            WHERE category_id = '{$itemId}'";
+   
+   $rs = mysqli_query($db,$sql); 
+   
+   return createSmartyRsArray($rs);   
 }
