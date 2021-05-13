@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-05-12 19:21:05
+/* Smarty version 3.1.36, created on 2021-05-13 19:22:14
   from 'C:\xampp\htdocs\best-phones.local\views\default\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_609c0e817ed483_34801626',
+  'unifunc' => 'content_609d6046ab6ad3_72037329',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd192b3a77c46638d4617e8ea3113cf8895d14062' => 
     array (
       0 => 'C:\\xampp\\htdocs\\best-phones.local\\views\\default\\header.tpl',
-      1 => 1620839621,
+      1 => 1620926531,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:leftcolumn.tpl' => 1,
   ),
 ),false)) {
-function content_609c0e817ed483_34801626 (Smarty_Internal_Template $_smarty_tpl) {
+function content_609d6046ab6ad3_72037329 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
