@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-05-13 19:22:14
+/* Smarty version 3.1.36, created on 2021-05-18 22:30:30
   from 'C:\xampp\htdocs\best-phones.local\views\default\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_609d6046ab6ad3_72037329',
+  'unifunc' => 'content_60a423e6063ad5_97780671',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd192b3a77c46638d4617e8ea3113cf8895d14062' => 
     array (
       0 => 'C:\\xampp\\htdocs\\best-phones.local\\views\\default\\header.tpl',
-      1 => 1620926531,
+      1 => 1621369820,
       2 => 'file',
     ),
   ),
@@ -21,15 +21,21 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:leftcolumn.tpl' => 1,
   ),
 ),false)) {
-function content_609d6046ab6ad3_72037329 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60a423e6063ad5_97780671 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
     <head>
         <title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
         <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['teplateWebPath']->value;?>
 css/main.css" type="text/css"/>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="/js/jquery-1.7.1.min.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src="/js/main.js"><?php echo '</script'; ?>
+>
     </head>
-    <body>
+<body>
         <div id="header">
             <h1>best-phones - интернет магазин</h1>
         </div>
