@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-05-21 09:09:05
+/* Smarty version 3.1.36, created on 2021-05-21 11:02:49
   from 'C:\xampp\htdocs\best-phones.local\views\default\leftcolumn.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60a75c911e3dd0_23305844',
+  'unifunc' => 'content_60a77739805f65_67243002',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '53078bdcacc5621d95315345d70521d49e447cca' => 
     array (
       0 => 'C:\\xampp\\htdocs\\best-phones.local\\views\\default\\leftcolumn.tpl',
-      1 => 1621580824,
+      1 => 1621587760,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60a75c911e3dd0_23305844 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60a77739805f65_67243002 (Smarty_Internal_Template $_smarty_tpl) {
 ?>                
 <div id="leftColumn">
             
@@ -57,6 +57,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>  
 
+<?php if ((isset($_smarty_tpl->tpl_vars['arUser']->value))) {?>
+	<div id="userBox">
+		<a href="/user/" id="userLink"><?php echo $_smarty_tpl->tpl_vars['arUser']->value['displayName'];?>
+</a><br />
+		<a href="/user/logout/" onclick="logout();">Выход</a>
+	</div>
+<?php } else { ?>
 	<div id="userBox" class="hideme">
 		<a href="#" id="userLink"></a><br />
 		<a href="/user/logout/" onclick="logout();">Выход</a>
@@ -81,7 +88,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		<input type="button" onclick="registerNewUser();" value="Зарегистрироваться"/>
 			
         </div>
-</div>
+    </div>
+<?php }?>
    <div class="menuCaption">Корзина</div>
    <a href="/cart/" title="Перейти в корзину">В корзине</a>
     <span id="cartCntItems">
