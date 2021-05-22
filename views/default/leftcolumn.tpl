@@ -27,7 +27,7 @@
 		<a href="#" id="userLink"></a><br />
 		<a href="/user/logout/" onclick="logout();">Выход</a>
 	</div>
-
+    {if ! isset($hideLoginBox)}
 	<div id="loginBox">
             <div class="menuCaption">Авторизация</div>
             <input type="text" id="loginEmail" name="loginEmail" value=""/><br />
@@ -48,6 +48,7 @@
 			
         </div>
     </div>
+        {/if}
 {/if}
    <div class="menuCaption">Корзина</div>
    <a href="/cart/" title="Перейти в корзину">В корзине</a>

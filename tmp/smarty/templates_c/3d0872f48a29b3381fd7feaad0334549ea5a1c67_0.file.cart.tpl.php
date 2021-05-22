@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-05-20 09:36:43
+/* Smarty version 3.1.36, created on 2021-05-22 14:08:13
   from 'C:\xampp\htdocs\best-phones.local\views\default\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60a6118b4e5165_71988228',
+  'unifunc' => 'content_60a8f42d69aa73_56000265',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3d0872f48a29b3381fd7feaad0334549ea5a1c67' => 
     array (
       0 => 'C:\\xampp\\htdocs\\best-phones.local\\views\\default\\cart.tpl',
-      1 => 1621496202,
+      1 => 1621685270,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60a6118b4e5165_71988228 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60a8f42d69aa73_56000265 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h1>Корзина</h1>
 
 <?php if (!$_smarty_tpl->tpl_vars['rsProducts']->value) {?>
 В корзине пусто.
 <?php } else { ?>
+    <form action="/cart/order/" method="POST">
 	<h2>Данные заказа</h2>
 	<table>
 		<tr>
@@ -108,8 +109,9 @@ $_smarty_tpl->tpl_vars['__smarty_foreach_products']->value['iteration']++;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
-	</table>
-
+</table>
+   <input type="submit" value="Оформить заказ"/>    
+</form>
  
 <?php }
 }
