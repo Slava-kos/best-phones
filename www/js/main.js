@@ -134,13 +134,13 @@ function login(){
                 $('#userLink').html(data['displayName']);
                 $('#userBox').show();
 
-				//> заполняем поля на странице заказа
-				$('#name').val(data['name']);
-				$('#phone').val(data['phone']);
-				$('#adress').val(data['adress']);
-				//<
+		//> заполняем поля на странице заказа
+		$('#name').val(data['name']);
+		$('#phone').val(data['phone']);
+		$('#adress').val(data['adress']);
+		//<
 				
-				$('#btnSaveOrder').show();
+		$('#btnSaveOrder').show();
 				
 			} else {
                 alert(data['message']);
