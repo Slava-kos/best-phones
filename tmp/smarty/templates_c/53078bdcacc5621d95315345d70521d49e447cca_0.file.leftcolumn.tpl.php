@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-05-22 15:03:01
+/* Smarty version 3.1.36, created on 2021-05-23 20:39:51
   from 'C:\xampp\htdocs\best-phones.local\views\default\leftcolumn.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60a901054af2b9_61112076',
+  'unifunc' => 'content_60aaa1776d5f86_10003372',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '53078bdcacc5621d95315345d70521d49e447cca' => 
     array (
       0 => 'C:\\xampp\\htdocs\\best-phones.local\\views\\default\\leftcolumn.tpl',
-      1 => 1621688574,
+      1 => 1621795186,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60a901054af2b9_61112076 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60aaa1776d5f86_10003372 (Smarty_Internal_Template $_smarty_tpl) {
 ?>                
 <div id="leftColumn">
             
@@ -91,14 +91,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
         <?php }
 }?>
-   <div class="menuCaption">Корзина</div>
-   <a href="/cart/" title="Перейти в корзину">В корзине</a>
-    <span id="cartCntItems">
-        <?php if ($_smarty_tpl->tpl_vars['cartCntItems']->value > 0) {
-echo $_smarty_tpl->tpl_vars['cartCntItems']->value;
-} else { ?>пусто<?php }?>
-    </span>
-</div> 
-</div>
+   </div>
 <?php }
 }
