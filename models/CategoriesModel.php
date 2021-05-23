@@ -101,3 +101,35 @@ function insertCat($catName, $catParentId = 0){
     $id = mysqli_insert_id($db);
     return $id;
 }
+
+function getAllCategories(){
+    global $db;
+    $sql = "SELECT *
+            FROM `categories`
+            ORDER BY `parent_id` ASC";
+    $rs = mysqli_query($db,$sql);
+    
+    return createSmartyRsArray($rs);
+}
+
+function updateCategoryData($itemID, $parentID = -1, $newName = ''){
+    global $db;
+    $set = array();
+    
+    if($newName){
+        $set[] = "`name` = '{$newName}'";
+    }
+    
+    if($parentID > -1){
+        $set[] = "`parent_id` = '{$parentID}'";
+    }
+    
+    $setStr = implode(", ", $set);
+        
+    $sql = "UPDATE categories
+             SET {$setStr}
+             WHERE `id` = '{$itemID}'";
+    $rs = mysqli_query($db,$sql);
+    
+    return $rs;
+}

@@ -27,7 +27,7 @@ function indexAction($smarty)
 }
 
 function addnewcatAction() {
-
+    global $db;
     $catName = $_POST['newCategoryName'];
     $catParentId = $_POST['generalCatId'];
 
@@ -40,6 +40,39 @@ function addnewcatAction() {
         $resData['success'] = 0;
         $resData['message'] = 'Ошибка добавления категории';
     }
+    echo json_encode($resData);
+    return;
+}
+
+function categoryAction($smarty) {
+    $rsCategories = getAllCategories();
+    $rsMainCategories = getAllMainCategories();
+    //d($rsMainCategories);
+    $smarty->assign('rsCategories', $rsCategories);
+    $smarty->assign('rsMainCategories', $rsMainCategories);
+    $smarty->assign('pageTitle', 'Управление сайтом - Категории');
+
+    loadTemplate($smarty, 'adminHeader');
+    loadTemplate($smarty, 'adminCategory');
+    loadTemplate($smarty, 'adminFooter');
+}
+
+function updatecategoryAction() {
+    global $db;
+    $itemId =  $_POST['itemId'];
+    $parenId = $_POST['parentId'];
+    $newName = $_POST['newName'];
+
+    $res = updateCategoryData($itemId, $parenId, $newName);
+
+    if ($res) {
+        $resData['success'] = 1;
+        $resData['message'] = 'Категория обновлена';
+    } else {
+        $resData['success'] = 0;
+        $resData['message'] = 'Ошибка изменения данных категории';
+    }
+    
     echo json_encode($resData);
     return;
 }
