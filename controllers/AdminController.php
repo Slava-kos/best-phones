@@ -76,4 +76,76 @@ function updatecategoryAction() {
     echo json_encode($resData);
     return;
 }
+function productsAction($smarty) {
+    $rsCategories = getAllCategories();
+    $rsProducts = getProducts();
 
+    $smarty->assign('rsCategories', $rsCategories);
+    $smarty->assign('rsProducts', $rsProducts);
+    $smarty->assign('pageTitle', 'Управление сайтом - продукты');
+
+    loadTemplate($smarty, 'adminHeader');
+    loadTemplate($smarty, 'adminProducts');
+    loadTemplate($smarty, 'adminFooter');
+}
+//добавление продукта в БД
+function addproductAction() {
+    global $db;
+    $itemName = $_POST['itemName'];
+    $itemPrice = $_POST['itemPrice'];
+    $itemDesc = $_POST['itemDesc'];
+    $itemCat = $_POST['itemCatId'];
+    
+    $res = insertProduct($itemName, $itemPrice, $itemDesc, $itemCat);
+
+    if ($res) {
+        $resData['success'] = 1;
+        $resData['message'] = 'Изменения успешно внесены';
+    } else {
+        $resData['success'] = 0;
+        $resData['message'] = 'Ошибка изменения данных';
+    }
+    echo json_encode($resData);
+    return;
+}
+
+function updateproductAction(){
+    $itemId = $_POST['itemId'];
+    $itemName = $_POST['itemName'];
+    $itemPrice = $_POST['itemPrice'];
+    $itemStatus = $_POST['itemStatus'];
+    $itemDesc = $_POST['itemDesc'];
+    $itemCat = $_POST['itemCatId'];
+
+    $res = updateProduct($itemId, $itemName, $itemPrice, 
+                         $itemStatus, $itemDesc, $itemCat);
+    if ($res) {
+        $resData['success'] = 1;
+        $resData['message'] = 'Изменения успешно внесены';
+    } else {
+        $resData['success'] = 0;
+        $resData['message'] = 'Ошибка изменения данных';
+    }
+    echo json_encode($resData);
+    return;
+}
+
+function uploadAction(){
+    $itemId = $_POST['itemId'];
+    $ext = pathinfo($_FILES['filename']['name'], PATHINFO_EXTENSION);
+    $newFileName = $itemId . '.' . $ext;
+    
+    if(is_uploaded_file($_FILES['filename']['tmp_name'])){
+      $res = move_uploaded_file($_FILES['filename']['tmp_name'], $_SERVER['DOCUMENT_ROOT'] . '/images/products/' . $newFileName); 
+      if($res){
+          $res = updateProductImage($itemId, $newFileName);
+          if ($res){
+              redirect('/admin/products/');
+          }
+      }
+      
+    }
+     else {
+            echo "Ошибка загрузки ";
+    }
+}

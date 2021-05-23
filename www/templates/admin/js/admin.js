@@ -45,3 +45,56 @@ function updateCat(itemId){
     });
 }
 
+function addProduct(){
+    var itemName = $('#newItemName').val();
+    var itemPrice = $('#newItemPrice').val();
+    var itemDesc = $('#newItemDesc').val();
+    var itemCatId = $('#newItemCatId').val();
+    
+    var postData = {itemName: itemName, itemPrice: itemPrice,
+                    itemDesc: itemDesc, itemCatId: itemCatId};
+    $.ajax({
+        type: 'POST',
+        async: false,
+        url: "/admin/addproduct/",
+        data: postData,
+        dataType: 'json',
+        success: function(data){
+            alert(data['message']);
+            if (data['success'] ){
+                $('#newItemName').val('');
+                $('#newItemPrice').val('');
+                $('#newItemDesc').val('');
+                $('#newItemCatIds').val('');
+            }
+        }
+    });
+}
+
+
+function updateProduct(itemId){
+    var itemName = $('#itemName_' + itemId).val();
+    var itemPrice = $('#itemPrice_' + itemId).val();
+    var itemCatId = $('#itemCatId_' + itemId).val();
+    var itemDesc = $('#itemDesc_' + itemId).val();
+    var itemStatus = $('#itemStatus_' + itemId).prop('checked');
+    if(! itemStatus){
+        itemStatus = 1;
+    } else {
+      itemStatus = 0;  
+    }
+    
+    var postData = {itemId: itemId, itemName: itemName, itemPrice: itemPrice,
+                    itemCatId: itemCatId, itemDesc: itemDesc, itemStatus: itemStatus};
+    console.log(postData);
+    $.ajax({
+        type: 'POST',
+        async: false,
+        url: "/admin/updateproduct/",
+        data: postData,
+        dataType: 'json',
+        success: function(data){
+            alert(data['message']);
+            }
+    });
+}

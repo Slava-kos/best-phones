@@ -15,6 +15,7 @@ function getLastProducts($limit = null)
 {   global $db;
     $sql = "SELECT *
             FROM `products`
+            WHERE `status` !=0
             ORDER BY `id` DESC";
     if($limit){
         $sql.= " LIMIT {$limit}";
@@ -36,7 +37,7 @@ function getProductsByCat($itemId)
    $itemId = intval($itemId);
    $sql = "SELECT * 
             FROM products
-            WHERE category_id = '{$itemId}'";
+            WHERE category_id = '{$itemId}' and status !=0";
    
    $rs = mysqli_query($db,$sql); 
    
@@ -75,4 +76,67 @@ function getProductsFromArray($itemsIds)
     $rs = mysqli_query($db,$sql); 
    
    return createSmartyRsArray($rs); 
+}
+
+function getProducts(){
+    global $db;
+    $sql = "SELECT * FROM `products`
+             ORDER BY `category_id`";
+    
+    $rs = mysqli_query($db,$sql);
+    
+    return createSmartyRsArray($rs);
+}
+
+function insertProduct($itemName, $itemPrice, $itemDesc, $ItemCat){
+    global $db;
+    $sql = "INSERT INTO `products`
+             SET
+             `name` = '{$itemName}',
+             `price` = '{$itemPrice}',
+             `description` = '{$itemDesc}',
+             `category_id` = '{$ItemCat}'";
+    $rs = mysqli_query($db,$sql);
+    
+    return $rs;
+}
+
+function updateProduct($itemId, $itemName, $itemPrice, $itemStatus,
+                        $itemDesc, $itemCat, $newFileName = NULL){
+    global $db;
+    $set = array();
+    if($itemName){
+        $set[] = "`name` = '{$itemName}'";
+    }
+    if($itemPrice > 0){
+        $set[] = "`price` = '{$itemPrice}'";
+    }
+    if($itemStatus !== NULL){
+        $set[] = "`status` = '{$itemStatus}'";
+    }
+    if($itemDesc){
+        $set[] = "`description` = '{$itemDesc}'";
+    }
+    if($itemCat){
+        $set[] = "`category_id` = '{$itemCat}'";
+    }
+    if($newFileName){
+        $set[] = "`image` = '{$newFileName}'";
+    }
+    $setStr = implode(', ', $set);
+    
+    $sql = "UPDATE `products` 
+            SET {$setStr} 
+            WHERE `id` = '{$itemId}'";
+       
+    $rs = mysqli_query($db,$sql);
+    
+    return $rs;
+}
+
+function updateProductImage($itemId, $newFileName){
+    
+    $rs = updateProduct($itemId, NULL, NULL, NULL, 
+                            NULL, NULL, $newFileName);
+    return $rs;
 }
