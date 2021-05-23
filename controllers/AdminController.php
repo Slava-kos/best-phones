@@ -17,6 +17,7 @@ $smarty->assign('teplateWebPath', TemplateAdminWebPath);
 function indexAction($smarty)
 {       
         $rsCategories = getAllMainCategories();
+        
         //d($rsCategories);   
         $smarty->assign('rsCategories', $rsCategories);
         $smarty->assign('pageTitle', 'Управление сайтом');
@@ -148,4 +149,51 @@ function uploadAction(){
      else {
             echo "Ошибка загрузки ";
     }
+}
+
+function ordersAction($smarty){
+    
+    $rsOrders = getOrders();
+    
+    $smarty->assign('rsOrders', $rsOrders);
+    $smarty->assign('pageTitle', 'Заказы');
+
+    loadTemplate($smarty, 'adminHeader');
+    loadTemplate($smarty, 'adminOrders');
+    loadTemplate($smarty, 'adminFooter');
+}
+
+function setorderstatusAction(){
+    $itemId = $_POST['itemId'];
+    $status = $_POST['status'];
+
+    $res = updateOrderStatus($itemId, $status);
+    
+    if ($res) {
+        $resData['success'] = 1;
+        $resData['message'] = 'Статус был обновлен';
+    } else {
+        $resData['success'] = 0;
+        $resData['message'] = 'Ошибка обновления статуса';
+    }
+    echo json_encode($resData);
+    return;
+}
+
+
+function setorderdatepaymentAction(){
+    $itemId = $_POST['itemId'];
+    $datePayment = $_POST['datePayment'];
+
+    $res = updateOrderDatePayment($itemId, $datePayment);
+    
+    if ($res) {
+        $resData['success'] = 1;
+        $resData['message'] = 'Статус был обновлен';
+    } else {
+        $resData['success'] = 0;
+        $resData['message'] = 'Ошибка установки статуса';
+    }
+    echo json_encode($resData);
+    return;
 }

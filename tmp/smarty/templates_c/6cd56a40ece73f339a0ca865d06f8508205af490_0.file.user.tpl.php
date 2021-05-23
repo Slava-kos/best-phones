@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-05-22 20:50:23
+/* Smarty version 3.1.36, created on 2021-05-23 15:40:44
   from 'C:\xampp\htdocs\best-phones.local\views\default\user.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60a9526f0928f2_56160986',
+  'unifunc' => 'content_60aa5b5cefa6d9_42134268',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6cd56a40ece73f339a0ca865d06f8508205af490' => 
     array (
       0 => 'C:\\xampp\\htdocs\\best-phones.local\\views\\default\\user.tpl',
-      1 => 1621709417,
+      1 => 1621709491,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60a9526f0928f2_56160986 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60aa5b5cefa6d9_42134268 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h1>Ваши регистрационные даные:</h1>
 <table border="0">
@@ -99,7 +99,7 @@ $_smarty_tpl->tpl_vars['__smarty_foreach_orders']->value['iteration']++;
                 <?php } else { ?>
                     Заказ не оплачен
                 <?php }?>
-            </td>
+                </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['item']->value['date_created'];?>
 </td>
                 <td><?php echo $_smarty_tpl->tpl_vars['item']->value['date_payment'];?>

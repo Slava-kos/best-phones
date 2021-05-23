@@ -81,3 +81,58 @@ function getOrdersWithProductsByUser($userId)
    
    return $smartyRs;	
 }
+
+function getOrders(){
+    global $db;
+    $sql = "SELECT o.*, u.name, u.email, u.phone, u.adress
+             FROM `orders` AS `o`
+             LEFT JOIN `users` as `u` ON u.id = o.user_id
+             ORDER BY `id` DESC";
+    
+    $rs = mysqli_query($db,$sql);
+    
+    $smartyRs = array();
+    while($row = mysqli_fetch_assoc($rs)){
+        $rsChildren = getProductsForOrder($row['id']);
+        
+        if($rsChildren){
+            $row['children'] = $rsChildren;
+            $smartyRs[] = $row;
+        }
+    }
+    return $smartyRs;
+}
+
+function getProductsForOrder($orderId){
+    global $db;
+    $sql = "SELECT * FROM `purchase` AS `pe`
+            LEFT JOIN `products` AS `ps` 
+            ON pe.product_id = ps.id
+            WHERE (`order_id` = '{$orderId}')";
+
+    $rs = mysqli_query($db,$sql);
+
+    return createSmartyRsArray($rs);
+}
+function updateOrderStatus($itemId, $status){
+    global $db;
+    $status = intval($status);
+    $sql = "UPDATE `orders`
+            SET `status` = '{$status}'
+            WHERE `id` = '{$itemId}'";
+    //d($sql);        
+    $rs = mysqli_query($db,$sql);
+    
+    return $rs;
+}
+
+function updateOrderDatePayment($itemId, $datePayment){
+    global $db;
+    $sql = "UPDATE `orders`
+            SET `date_payment` = '{$datePayment}'
+            WHERE `id` = '{$itemId}'";
+    //d($sql);
+    $rs = mysqli_query($db,$sql);
+    
+    return $rs;
+}
