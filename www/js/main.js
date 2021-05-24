@@ -87,19 +87,22 @@ function registerNewUser(){
 		dataType: 'json',
 		success: function(data){
 			if(data['success']){
-                alert('Регистрация прошла успешно');
+
+				location.reload();
+
+                // alert('Регистрация прошла успешно');
                 
                 //> блок в левом столбце
-                $('#registerBox').hide();
+                // $('#registerBox').hide();
 				
-		$('#userLink').attr('href', '/user/');    
-                $('#userLink').html(data['userName']);
-                $('#userBox').show();
+		// $('#userLink').attr('href', '/user/');
+    //             $('#userLink').html(data['userName']);
+    //             $('#userBox').show();
                 //<
 				
 				//> страница заказа
-                $('#loginBox').hide();
-                $('#btnSaveOrder').show();
+        //         $('#loginBox').hide();
+        //         $('#btnSaveOrder').show();
                 //<
 			} else {
                 alert(data['message']);
@@ -127,21 +130,24 @@ function login(){
 		dataType: 'json',
 		success: function(data){
 			if(data['success']){
-                $('#registerBox').hide();
-                $('#loginBox').hide();
-                
-                $('#userLink').attr('href', '/user/');    
-                $('#userLink').html(data['displayName']);
-                $('#userBox').show();
 
-		//> заполняем поля на странице заказа
-		$('#name').val(data['name']);
-		$('#phone').val(data['phone']);
-		$('#adress').val(data['adress']);
-		//<
-				
-		$('#btnSaveOrder').show();
-				
+				location.reload();
+
+				// $('#registerBox').hide();
+				// $('#loginBox').hide();
+
+				// $('#userLink').attr('href', '/user/');
+				// $('#userLink').html(data['displayName']);
+				// $('#userBox').show();
+
+				//> заполняем поля на странице заказа
+				// $('#name').val(data['name']);
+				// $('#phone').val(data['phone']);
+				// $('#adress').val(data['adress']);
+				//<
+
+				// $('#btnSaveOrder').show();
+
 			} else {
                 alert(data['message']);
             }

@@ -1,24 +1,51 @@
 {* Страница категории *}
-<h1>Товары категории {$rsCategory['name']}</h1>
 
-        {foreach $rsProducts as $item name=products}
-                <div style="float: left; padding: 0px 30px 40px 0px;">
-                    <a  href="/product/{$item['id']}/">
-                        <img src="/images/products/{$item['image']}" width="100"  />
-                    </a><br />
-                    <a href="/product/{$item['id']}/">{$item['name']}</a>
-                </div>
+<div class="container">
+  <div class="row">
+    <div class="col s4">
+      {include file='leftcolumn.tpl'}
+    </div>
+    <div class="col s8">
 
-            {if $smarty.foreach.products.iteration mod 3 == 0}
-               <div style="clear: both;"></div>
-            {/if} 
-        {/foreach}
-  
-{foreach $rsChildCats as $item name=childCats}
-    <h2><a href="/category/{$item['id']}/">{$item['name']}</a></h2>
-{/foreach}
-{*{if (!$rsProducts) && (!$rsChildCats)}*}
-   {*<h2>Товара нет в наличии</h2> *}
- {if empty()}
-    <h2>Товара нет в наличии</h2>
-{/if}
+      <h2>Товары категории {$rsCategory['name']}</h2>
+
+      {foreach $rsProducts as $item name=products}
+
+      <div class="row">
+        <div class="col s12 m7">
+          <div class="card small">
+            <div class="card-image">
+              <img src="/images/products/{$item['image']}">
+              <span class="card-title white-text grey darken-2">{$item['name']}</span>
+            </div>
+            <!--<div class="card-content"></div>-->
+            <div class="card-action">
+              <a href="/product/{$item['id']}/">Перейти к товару</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/foreach}
+
+      {foreach $rsChildCats as $item name=childCats}
+      <h2>
+        <a href="/category/{$item['id']}/">{$item['name']}</a>
+      </h2>
+      {/foreach}
+
+     
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
