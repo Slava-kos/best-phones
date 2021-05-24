@@ -1,25 +1,34 @@
 <html>
   <head>
     <title>{$pageTitle}</title>
-    <link rel="stylesheet" href="{$teplateWebPath}css/main.css" type="text/css"/>
+    {*<link rel="stylesheet" href="{$teplateWebPath}css/main.css" type="text/css"/>*}
     <script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script>document.addEventListener('DOMContentLoaded', () => {
       M.AutoInit();
     });</script>
+    <style>body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  main {
+    flex: 1 0 auto;
+  }</style>
   </head>
   <body>
 
     <header>
-      <nav class="red darken-4">
+      <nav class="red darken-4 ">
         <div class="container">
           <div class="nav-wrapper">
             <a class="brand-logo" href="/">Best Phones</a>
             <ul class="right">
               <li>
-                <a href="/cart/" title="Перейти в корзину">Корзина [{$cartCntItems}]</a>
+                <a {*class="black-text"*} href="/cart/" title="Перейти в корзину">Корзина [{$cartCntItems}]</a>
               </li>
               <li>
                 <a class="modal-trigger" href="#aboutModal">О нас</a>
@@ -72,7 +81,7 @@
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="button" onclick="registerNewUser();" value="Зарегистрироваться"/>
+                   <a class="waves-effect waves-light btn" onClick="registerNewUser();">Зарегистрироваться</a>
                 </div>
               </div>
             </form>
@@ -101,7 +110,7 @@
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="button" onclick="login();" value="Войти"/>
+                  <a class="waves-effect waves-light btn" onClick="login();">Войти</a>
                 </div>
               </div>
             </form>
@@ -130,7 +139,7 @@
         </div>
       </div>
     </private>
-
+  <main>
 
 
 

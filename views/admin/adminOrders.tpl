@@ -1,4 +1,5 @@
 <h2>Заказы</h2>
+<div class="grey">
 {if ! $rsOrders}
     Нет текущих заказов
 {else}
@@ -56,5 +57,5 @@
         {/foreach}
     </table>
 {/if}
-
+</div>
 

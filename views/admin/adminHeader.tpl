@@ -21,4 +21,4 @@
             <h1>Управление сайтом</h1>
         </div>
 {include file='adminLeftcolumn.tpl'}
-<div id="centerColumn">   
+<div class="grey"id="centerColumn">   

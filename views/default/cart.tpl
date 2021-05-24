@@ -61,9 +61,14 @@
 
 		</tr>
 	   {/foreach}
+       </table>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Оформить заказ
+    <i class="material-icons right">send</i>
+  </button>
+ </form>
+   {*<input type="submit" value="Оформить заказ"/>*}
+   {*<button class="btn waves-effect waves-light" type="submit" name="action">Оформить заказ
+    <i class="material-icons right">send</i>
+  </button> *}
 
-</table>
-   <input type="submit" value="Оформить заказ"/>    
-</form>
- 
 {/if}

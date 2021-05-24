@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-05-23 23:28:17
+/* Smarty version 3.1.36, created on 2021-05-25 00:19:10
   from 'C:\xampp\htdocs\best-phones.local\views\admin\adminHeader.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60aac8f1ec8a12_71696987',
+  'unifunc' => 'content_60ac265ea1e7c6_11931745',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c85ebfcf9d7932090281ca5735dfad92b56c45d2' => 
     array (
       0 => 'C:\\xampp\\htdocs\\best-phones.local\\views\\admin\\adminHeader.tpl',
-      1 => 1621805270,
+      1 => 1621894747,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:adminLeftcolumn.tpl' => 1,
   ),
 ),false)) {
-function content_60aac8f1ec8a12_71696987 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ac265ea1e7c6_11931745 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
     <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['teplateWebPath']->value;?>
@@ -62,5 +62,5 @@ js/admin.js"><?php echo '</script'; ?>
         </div>
 <?php $_smarty_tpl->_subTemplateRender('file:adminLeftcolumn.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-<div id="centerColumn">   <?php }
+<div class="grey"id="centerColumn">   <?php }
 }

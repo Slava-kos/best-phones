@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-05-24 00:15:56
+/* Smarty version 3.1.36, created on 2021-05-24 23:51:32
   from 'C:\xampp\htdocs\best-phones.local\views\default\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60aad41c563cc9_95685822',
+  'unifunc' => 'content_60ac1fe425d626_48853659',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd192b3a77c46638d4617e8ea3113cf8895d14062' => 
     array (
       0 => 'C:\\xampp\\htdocs\\best-phones.local\\views\\default\\header.tpl',
-      1 => 1621808152,
+      1 => 1621893087,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60aad41c563cc9_95685822 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ac1fe425d626_48853659 (Smarty_Internal_Template $_smarty_tpl) {
 ?><html>
   <head>
     <title><?php echo $_smarty_tpl->tpl_vars['pageTitle']->value;?>
 </title>
-    <link rel="stylesheet" href="<?php echo $_smarty_tpl->tpl_vars['teplateWebPath']->value;?>
-css/main.css" type="text/css"/>
-    <?php echo '<script'; ?>
+        <?php echo '<script'; ?>
  type="text/javascript" src="/js/jquery-1.7.1.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
@@ -37,22 +35,31 @@ css/main.css" type="text/css"/>
     <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"><?php echo '</script'; ?>
 >
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <?php echo '<script'; ?>
 >document.addEventListener('DOMContentLoaded', () => {
       M.AutoInit();
     });<?php echo '</script'; ?>
 >
+    <style>body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+  main {
+    flex: 1 0 auto;
+  }</style>
   </head>
   <body>
 
     <header>
-      <nav class="red darken-4">
+      <nav class="red darken-4 ">
         <div class="container">
           <div class="nav-wrapper">
             <a class="brand-logo" href="/">Best Phones</a>
             <ul class="right">
               <li>
-                <a href="/cart/" title="Перейти в корзину">Корзина [<?php echo $_smarty_tpl->tpl_vars['cartCntItems']->value;?>
+                <a  href="/cart/" title="Перейти в корзину">Корзина [<?php echo $_smarty_tpl->tpl_vars['cartCntItems']->value;?>
 ]</a>
               </li>
               <li>
@@ -107,7 +114,7 @@ css/main.css" type="text/css"/>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="button" onclick="registerNewUser();" value="Зарегистрироваться"/>
+                   <a class="waves-effect waves-light btn" onClick="registerNewUser();">Зарегистрироваться</a>
                 </div>
               </div>
             </form>
@@ -136,7 +143,7 @@ css/main.css" type="text/css"/>
               </div>
               <div class="row">
                 <div class="input-field col s12">
-                  <input type="button" onclick="login();" value="Войти"/>
+                  <a class="waves-effect waves-light btn" onClick="login();">Войти</a>
                 </div>
               </div>
             </form>
@@ -165,7 +172,7 @@ css/main.css" type="text/css"/>
         </div>
       </div>
     </private>
-
+  <main>
 
 
 

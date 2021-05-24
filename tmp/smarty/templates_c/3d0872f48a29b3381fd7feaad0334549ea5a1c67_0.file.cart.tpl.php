@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-05-22 14:08:13
+/* Smarty version 3.1.36, created on 2021-05-24 23:43:38
   from 'C:\xampp\htdocs\best-phones.local\views\default\cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60a8f42d69aa73_56000265',
+  'unifunc' => 'content_60ac1e0a308519_38876448',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3d0872f48a29b3381fd7feaad0334549ea5a1c67' => 
     array (
       0 => 'C:\\xampp\\htdocs\\best-phones.local\\views\\default\\cart.tpl',
-      1 => 1621685270,
+      1 => 1621892613,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60a8f42d69aa73_56000265 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ac1e0a308519_38876448 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <h1>Корзина</h1>
 
@@ -108,11 +108,12 @@ $_smarty_tpl->tpl_vars['__smarty_foreach_products']->value['iteration']++;
 	   <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-
-</table>
-   <input type="submit" value="Оформить заказ"/>    
-</form>
- 
+       </table>
+          <button class="btn waves-effect waves-light" type="submit" name="action">Оформить заказ
+    <i class="material-icons right">send</i>
+  </button>
+ </form>
+      
 <?php }
 }
 }

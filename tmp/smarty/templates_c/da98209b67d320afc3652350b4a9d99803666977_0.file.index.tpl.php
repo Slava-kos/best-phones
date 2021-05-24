@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.36, created on 2021-05-24 00:02:45
+/* Smarty version 3.1.36, created on 2021-05-24 22:34:04
   from 'C:\xampp\htdocs\best-phones.local\views\default\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.36',
-  'unifunc' => 'content_60aad105ab7653_93604884',
+  'unifunc' => 'content_60ac0dbc46b0b4_48756030',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'da98209b67d320afc3652350b4a9d99803666977' => 
     array (
       0 => 'C:\\xampp\\htdocs\\best-phones.local\\views\\default\\index.tpl',
-      1 => 1621807360,
+      1 => 1621888435,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:leftcolumn.tpl' => 1,
   ),
 ),false)) {
-function content_60aad105ab7653_93604884 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ac0dbc46b0b4_48756030 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
-
 <div class="container">
   <div class="row">
     <div class="col s4">
@@ -38,7 +37,7 @@ $_smarty_tpl->tpl_vars['item']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->do_else = false;
 ?>
-
+          
       <div class="row">
         <div class="col s12 m7">
           <div class="card small">
@@ -62,5 +61,6 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     </div>
   </div>
-</div><?php }
+</div>
+<?php }
 }
